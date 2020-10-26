@@ -10,7 +10,7 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
-var errh error // 展示 help 命令后的内容
+var errh = errors.New("Get Help") // 展示 help 命令后的内容
 
 // Command 与命令相关的成员变量和函数的结构体
 type Command struct {
