@@ -360,24 +360,20 @@ func (c *Command) UsageTemplate() string {
 		return c.parent.UsageTemplate()
 	}
 	return `
-{{.LongIntroduction}}
+	{{.LongIntroduction}}
 
-Usage:{{if .Runnable}}
-  {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
-  {{.CommandPath}} [command]
-
-Examples:
-{{.Example}}{{end}}{{if .HasAvailableSubCommands}}
-
-Available Commands:{{range .Commands}}{{if .IsAvailableCommand}}
-  {{.Name}}: {{.getShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
-
-Flags:
-{{.LocalFlags.FlagUsages}}{{end}}{{if .HasAvailableGlobalFlags}}
-
-GlobalFlags:
-{{.getGflags.FlagUsages}}{{end}} {{if .HasAvailableSubCommands}}
-
-Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
-`
+	Usage:{{if .Runnable}}
+	  {{.UseLine}}{{end}}{{if .HasAvailableSubCmds}}
+	  {{.CommandPath}} [command]
+	
+	Available Commands:{{range .Commands}}{{if .IsAvailable}}
+	  {{.Name}}: {{.ShortIntroduction}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
+	LocalFlags:
+	  {{.LocalFlags.FlagUsages}}
+	{{end}}{{if .HasAvailableGlobalFlags}}
+	GlobalFlags:
+	  {{.GlobalFlags.FlagUsages}}
+	{{end}} {{if .HasAvailableSubCmds}}
+	Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
+	`
 }
