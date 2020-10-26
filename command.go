@@ -10,6 +10,8 @@ import (
 	flag "github.com/spf13/pflag"
 )
 
+var errh error // 展示 help 命令后的内容
+
 // Command 与命令相关的成员变量和函数的结构体
 type Command struct {
 	Use string // 命令的名称
@@ -80,7 +82,7 @@ func (c *Command) execute(a []string) error {
 func (c *Command) ExecuteC() (err error) {
 	args := os.Args
 	cmd, flags, err := c.Find(args)
-	if err == errors.New("Help") {
+	if err == errh {
 		cmd.Usage()
 		return nil
 	}
@@ -117,6 +119,11 @@ func (c *Command) GetLong() string {
 // GetShort 返回命令的短介绍
 func (c *Command) GetShort() string {
 	return c.Short
+}
+
+// SGetExample 返回命令的使用示例
+func (c *Command) SGetExample() string {
+	return c.Example
 }
 
 // Root 返回该命令的根命令
@@ -212,7 +219,7 @@ func innerFind(cmd *Command, innerArgs []string) (*Command, []string, error) {
 	argsWOflags := stripFlags(innerArgs[1:], cmd)
 
 	if len(argsWOflags) > 0 && argsWOflags[0] == "help" {
-		return cmd, nil, errors.New("Help")
+		return cmd, nil, errh
 	}
 
 	if len(argsWOflags) == 0 {
@@ -232,8 +239,8 @@ func innerFind(cmd *Command, innerArgs []string) (*Command, []string, error) {
 // Find 找到要执行的子命令
 func (c *Command) Find(args []string) (*Command, []string, error) {
 	commandFound, flags, err := innerFind(c, args)
-	if err == errors.New("Help") {
-		return commandFound, []string{}, errors.New("Help")
+	if err == errh {
+		return commandFound, []string{}, errh
 	}
 	if err != nil {
 		return commandFound, flags, err
@@ -363,20 +370,20 @@ func (c *Command) UsageTemplate() string {
 {{.GetLong}}
 
 Usage:{{if .Runnable}}
-  {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
-  {{.CommandPath}} [command]
+	{{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
+	{{.CommandPath}} [command]
 
 Examples:
-{{.Example}}{{end}}{{if .HasAvailableSubCommands}}
+	{{.Example}}{{end}}{{if .HasAvailableSubCommands}}
 
 Available Commands:{{range .Commands}}{{if .IsAvailableCommand}}
-{{.Name}}: {{.GetShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
+	{{.Name}}: {{.GetShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
 
 Flags:
-{{.LocalFlags.FlagUsages}}{{end}}{{if .HasAvailableGlobalFlags}}
+	{{.LocalFlags.FlagUsages}}{{end}}{{if .HasAvailableGlobalFlags}}
 
 GlobalFlags:
-{{.GlobalFlags.FlagUsages}}{{end}} {{if .HasAvailableSubCommands}}
+	{{.GlobalFlags.FlagUsages}}{{end}} {{if .HasAvailableSubCommands}}
 
 Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
 `
