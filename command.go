@@ -366,14 +366,18 @@ Usage:{{if .Runnable}}
   {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
   {{.CommandPath}} [command]
 
+Examples:
+{{.Example}}{{end}}{{if .HasAvailableSubCommands}}
+
 Available Commands:{{range .Commands}}{{if .IsAvailableCommand}}
-  {{.Name}}: {{.GetShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
-LocalFlags:
-  {{.LocalFlags.FlagUsages}}
-{{end}}{{if .HasAvailableGlobalFlags}}
+{{.Name}}: {{.GetShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
+
+Flags:
+{{.LocalFlags.FlagUsages}}{{end}}{{if .HasAvailableGlobalFlags}}
+
 GlobalFlags:
-  {{.GlobalFlags.FlagUsages}}
-{{end}} {{if .HasAvailableSubCommands}}
+{{.GlobalFlags.FlagUsages}}{{end}} {{if .HasAvailableSubCommands}}
+
 Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
 `
 }
