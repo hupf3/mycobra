@@ -364,7 +364,7 @@ func (c *Command) UsageTemplate() string {
 
 Usage:{{if .Runnable}}
   {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
-  {{.CommandPath}} [command]{{end}}
+  {{.CommandPath}} [command]
 
 Examples:
 {{.Example}}{{end}}{{if .HasAvailableSubCommands}}
