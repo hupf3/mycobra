@@ -109,13 +109,13 @@ func (c *Command) Name() string {
 	return name
 }
 
-// getLong 返回命令的长介绍
-func (c *Command) getLong() string {
+// GetLong 返回命令的长介绍
+func (c *Command) GetLong() string {
 	return c.Long
 }
 
-// getShort 返回命令的短介绍
-func (c *Command) getShort() string {
+// GetShort 返回命令的短介绍
+func (c *Command) GetShort() string {
 	return c.Short
 }
 
@@ -360,20 +360,20 @@ func (c *Command) UsageTemplate() string {
 		return c.parent.UsageTemplate()
 	}
 	return `
-	{{.LongIntroduction}}
+{{.GetLong}}
 
-	Usage:{{if .Runnable}}
-	  {{.UseLine}}{{end}}{{if .HasAvailableSubCmds}}
-	  {{.CommandPath}} [command]
-	
-	Available Commands:{{range .Commands}}{{if .IsAvailable}}
-	  {{.Name}}: {{.ShortIntroduction}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
-	LocalFlags:
-	  {{.LocalFlags.FlagUsages}}
-	{{end}}{{if .HasAvailableGlobalFlags}}
-	GlobalFlags:
-	  {{.GlobalFlags.FlagUsages}}
-	{{end}} {{if .HasAvailableSubCmds}}
-	Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
-	`
+Usage:{{if .Runnable}}
+  {{.UseLine}}{{end}}{{if .HasAvailableSubCommands}}
+  {{.CommandPath}} [command]
+
+Available Commands:{{range .Commands}}{{if .IsAvailableCommand}}
+  {{.Name}}: {{.GetShort}}{{end}}{{end}}{{end}}{{if .HasAvailableLocalFlags}}
+LocalFlags:
+  {{.LocalFlags.FlagUsages}}
+{{end}}{{if .HasAvailableGlobalFlags}}
+GlobalFlags:
+  {{.GlobalFlags.FlagUsages}}
+{{end}} {{if .HasAvailableSubCommands}}
+Use "{{.CommandPath}} [command] --help" for more information about a command.{{end}}
+`
 }
