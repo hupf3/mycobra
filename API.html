@@ -1,0 +1,694 @@
+using GOPATH mode
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#375EAB">
+
+  <title>mycobra - Go Documentation Server</title>
+
+<link type="text/css" rel="stylesheet" href="/lib/godoc/style.css">
+
+<script>window.initFuncs = [];</script>
+<script src="/lib/godoc/jquery.js" defer></script>
+
+
+
+<script>var goVersion = "go1.15.2";</script>
+<script src="/lib/godoc/godocs.js" defer></script>
+</head>
+<body>
+
+<div id='lowframe' style="position: fixed; bottom: 0; left: 0; height: 0; width: 100%; border-top: thin solid grey; background-color: white; overflow: auto;">
+...
+</div><!-- #lowframe -->
+
+<div id="topbar" class="wide"><div class="container">
+<div class="top-heading" id="heading-wide"><a href="/pkg/">Go Documentation Server</a></div>
+<div class="top-heading" id="heading-narrow"><a href="/pkg/">GoDoc</a></div>
+<a href="#" id="menu-button"><span id="menu-button-arrow">&#9661;</span></a>
+<form method="GET" action="/search">
+<div id="menu">
+
+<span class="search-box"><input type="search" id="search" name="q" placeholder="Search" aria-label="Search" required><button type="submit"><span><!-- magnifying glass: --><svg width="24" height="24" viewBox="0 0 24 24"><title>submit search</title><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg></span></button></span>
+</div>
+</form>
+
+</div></div>
+
+
+
+<div id="page" class="wide">
+<div class="container">
+
+
+  <h1>
+    Package mycobra
+    <span class="text-muted"></span>
+  </h1>
+
+
+
+
+
+
+
+<div id="nav"></div>
+
+
+<!--
+	Copyright 2009 The Go Authors. All rights reserved.
+	Use of this source code is governed by a BSD-style
+	license that can be found in the LICENSE file.
+-->
+<!--
+	Note: Static (i.e., not template-generated) href and id
+	attributes start with "pkg-" to make it impossible for
+	them to conflict with generated attributes (some of which
+	correspond to Go identifiers).
+-->
+
+	<script>
+	document.ANALYSIS_DATA = null;
+	document.CALLGRAPH = null;
+	</script>
+
+	
+		
+		<div id="short-nav">
+			<dl>
+			<dd><code>import "github.com/hupf3/mycobra"</code></dd>
+			</dl>
+			<dl>
+			<dd><a href="#pkg-overview" class="overviewLink">Overview</a></dd>
+			<dd><a href="#pkg-index" class="indexLink">Index</a></dd>
+			
+			
+			</dl>
+		</div>
+		<!-- The package's Name is printed as title by the top-level template -->
+		<div id="pkg-overview" class="toggleVisible">
+			<div class="collapsed">
+				<h2 class="toggleButton" title="Click to show Overview section">Overview ▹</h2>
+			</div>
+			<div class="expanded">
+				<h2 class="toggleButton" title="Click to hide Overview section">Overview ▾</h2>
+				
+				
+			</div>
+		</div>
+
+		<div id="pkg-index" class="toggleVisible">
+		<div class="collapsed">
+			<h2 class="toggleButton" title="Click to show Index section">Index ▹</h2>
+		</div>
+		<div class="expanded">
+			<h2 class="toggleButton" title="Click to hide Index section">Index ▾</h2>
+
+		<!-- Table of contents for API; must be named manual-nav to turn off auto nav. -->
+			<div id="manual-nav">
+			<dl>
+			
+			
+			
+			
+				
+				<dd><a href="#Command">type Command</a></dd>
+				
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.AddCommand">func (c *Command) AddCommand(cmds ...*Command)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.CommandPath">func (c *Command) CommandPath() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Commands">func (c *Command) Commands() []*Command</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Execute">func (c *Command) Execute() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.ExecuteC">func (c *Command) ExecuteC() (err error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Find">func (c *Command) Find(args []string) (*Command, []string, error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Flags">func (c *Command) Flags() *flag.FlagSet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.GetLong">func (c *Command) GetLong() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.GetShort">func (c *Command) GetShort() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasAvailableFlags">func (c *Command) HasAvailableFlags() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasAvailableGlobalFlags">func (c *Command) HasAvailableGlobalFlags() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasAvailableLocalFlags">func (c *Command) HasAvailableLocalFlags() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasAvailableSubCommands">func (c *Command) HasAvailableSubCommands() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasParent">func (c *Command) HasParent() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.HasSubCommands">func (c *Command) HasSubCommands() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.IsAvailableCommand">func (c *Command) IsAvailableCommand() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.LocalFlags">func (c *Command) LocalFlags() *flag.FlagSet</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Name">func (c *Command) Name() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Parent">func (c *Command) Parent() *Command</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.ParseFlags">func (c *Command) ParseFlags(args []string) error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Root">func (c *Command) Root() *Command</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Runnable">func (c *Command) Runnable() bool</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.SGetExample">func (c *Command) SGetExample() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.Usage">func (c *Command) Usage() error</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.UsageFunc">func (c *Command) UsageFunc() (f func(*Command) error)</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.UsageTemplate">func (c *Command) UsageTemplate() string</a></dd>
+				
+					
+					<dd>&nbsp; &nbsp; <a href="#Command.UseLine">func (c *Command) UseLine() string</a></dd>
+				
+			
+			
+			</dl>
+			</div><!-- #manual-nav -->
+
+		
+
+		
+			<h3>Package files</h3>
+			<p>
+			<span style="font-size:90%">
+			
+				<a href="/src/github.com/hupf3/mycobra/cobra.go">cobra.go</a>
+			
+				<a href="/src/github.com/hupf3/mycobra/command.go">command.go</a>
+			
+			</span>
+			</p>
+		
+		</div><!-- .expanded -->
+		</div><!-- #pkg-index -->
+
+		
+
+		
+		
+		
+		
+			
+			
+			<h2 id="Command">type <a href="/src/github.com/hupf3/mycobra/command.go?s=236:912#L6">Command</a>
+				<a class="permalink" href="#Command">&#xb6;</a>
+				
+				
+			</h2>
+			<p>
+Command 与命令相关的成员变量和函数的结构体
+</p>
+
+			<pre>type Command struct {
+<span id="Command.Use"></span>    Use <a href="/pkg/builtin/#string">string</a> <span class="comment">// 命令的名称</span>
+
+<span id="Command.Short"></span>    Short <a href="/pkg/builtin/#string">string</a> <span class="comment">// 命令短介绍</span>
+
+<span id="Command.Long"></span>    Long <a href="/pkg/builtin/#string">string</a> <span class="comment">// 长命令介绍</span>
+
+<span id="Command.Example"></span>    Example <a href="/pkg/builtin/#string">string</a> <span class="comment">// 如何使用命令的例子</span>
+
+<span id="Command.Run"></span>    Run func(cmd *<a href="#Command">Command</a>, args []<a href="/pkg/builtin/#string">string</a>) <span class="comment">// 执行命令的函数</span>
+    <span class="comment">// contains filtered or unexported fields</span>
+}
+</pre>
+
+			
+
+			
+
+			
+			
+			
+
+			
+
+			
+				
+				<h3 id="Command.AddCommand">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=3991:4037#L193">AddCommand</a>
+					<a class="permalink" href="#Command.AddCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) AddCommand(cmds ...*<a href="#Command">Command</a>)</pre>
+				<p>
+AddCommand 添加子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.CommandPath">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=7112:7150#L328">CommandPath</a>
+					<a class="permalink" href="#Command.CommandPath">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) CommandPath() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+CommandPath 返回到达该子命令的路径
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Commands">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2654:2693#L129">Commands</a>
+					<a class="permalink" href="#Command.Commands">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Commands() []*<a href="#Command">Command</a></pre>
+				<p>
+Commands 获取该命令的子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Execute">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=1954:1987#L89">Execute</a>
+					<a class="permalink" href="#Command.Execute">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Execute() <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+Execute 执行命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.ExecuteC">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=1685:1725#L72">ExecuteC</a>
+					<a class="permalink" href="#Command.ExecuteC">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) ExecuteC() (err <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+ExecuteC 执行命令并抛出异常
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Find">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=4831:4896#L230">Find</a>
+					<a class="permalink" href="#Command.Find">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Find(args []<a href="/pkg/builtin/#string">string</a>) (*<a href="#Command">Command</a>, []<a href="/pkg/builtin/#string">string</a>, <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+Find 找到要执行的子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Flags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=3581:3620#L174">Flags</a>
+					<a class="permalink" href="#Command.Flags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Flags() *<a href="/pkg/github.com/spf13/pflag/">flag</a>.<a href="/pkg/github.com/spf13/pflag/#FlagSet">FlagSet</a></pre>
+				<p>
+Flags 返回完整的命令参数
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.GetLong">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2222:2256#L105">GetLong</a>
+					<a class="permalink" href="#Command.GetLong">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) GetLong() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+GetLong 返回命令的长介绍
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.GetShort">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2314:2349#L110">GetShort</a>
+					<a class="permalink" href="#Command.GetShort">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) GetShort() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+GetShort 返回命令的短介绍
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasAvailableFlags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=6086:6128#L286">HasAvailableFlags</a>
+					<a class="permalink" href="#Command.HasAvailableFlags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasAvailableFlags() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasAvailableFlags 判断命令是否包含参数
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasAvailableGlobalFlags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=6279:6327#L293">HasAvailableGlobalFlags</a>
+					<a class="permalink" href="#Command.HasAvailableGlobalFlags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasAvailableGlobalFlags() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasAvailableGlobalFlags 判断命令是否存在全局参数
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasAvailableLocalFlags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=6481:6528#L300">HasAvailableLocalFlags</a>
+					<a class="permalink" href="#Command.HasAvailableLocalFlags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasAvailableLocalFlags() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasAvailableLocalFlags 判断命令是否存在局部参数
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasAvailableSubCommands">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=5648:5696#L266">HasAvailableSubCommands</a>
+					<a class="permalink" href="#Command.HasAvailableSubCommands">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasAvailableSubCommands() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasAvailableSubCommands 判断该命令是否有有效的子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasParent">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=5970:6004#L281">HasParent</a>
+					<a class="permalink" href="#Command.HasParent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasParent() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasParent 判断命令是否有父命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.HasSubCommands">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=5853:5892#L276">HasSubCommands</a>
+					<a class="permalink" href="#Command.HasSubCommands">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) HasSubCommands() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+HasSubCommands 判断命令是否有子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.IsAvailableCommand">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=5448:5491#L258">IsAvailableCommand</a>
+					<a class="permalink" href="#Command.IsAvailableCommand">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) IsAvailableCommand() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+IsAvailableCommand 判断是否可用作非帮助命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.LocalFlags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=3264:3308#L159">LocalFlags</a>
+					<a class="permalink" href="#Command.LocalFlags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) LocalFlags() *<a href="/pkg/github.com/spf13/pflag/">flag</a>.<a href="/pkg/github.com/spf13/pflag/#FlagSet">FlagSet</a></pre>
+				<p>
+LocalFlags 获取子命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Name">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2056:2087#L95">Name</a>
+					<a class="permalink" href="#Command.Name">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Name() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+Name 获取命令的名字
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Parent">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2759:2794#L134">Parent</a>
+					<a class="permalink" href="#Command.Parent">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Parent() *<a href="#Command">Command</a></pre>
+				<p>
+Parent 返回当前命令的父命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.ParseFlags">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=1149:1198#L45">ParseFlags</a>
+					<a class="permalink" href="#Command.ParseFlags">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) ParseFlags(args []<a href="/pkg/builtin/#string">string</a>) <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+ParseFlags 解析持久标志树和局部标志
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Root">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2512:2545#L120">Root</a>
+					<a class="permalink" href="#Command.Root">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Root() *<a href="#Command">Command</a></pre>
+				<p>
+Root 返回该命令的根命令
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Runnable">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=5329:5362#L253">Runnable</a>
+					<a class="permalink" href="#Command.Runnable">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Runnable() <a href="/pkg/builtin/#bool">bool</a></pre>
+				<p>
+Runnable 判断命令本身能否执行
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.SGetExample">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=2414:2452#L115">SGetExample</a>
+					<a class="permalink" href="#Command.SGetExample">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) SGetExample() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+SGetExample 返回命令的使用示例
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.Usage">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=7001:7032#L323">Usage</a>
+					<a class="permalink" href="#Command.Usage">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) Usage() <a href="/pkg/builtin/#error">error</a></pre>
+				<p>
+Usage 打印命令的使用方法
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.UsageFunc">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=6624:6678#L305">UsageFunc</a>
+					<a class="permalink" href="#Command.UsageFunc">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) UsageFunc() (f func(*<a href="#Command">Command</a>) <a href="/pkg/builtin/#error">error</a>)</pre>
+				<p>
+UsageFunc 返回为此命令设置的函数
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.UsageTemplate">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=7607:7647#L351">UsageTemplate</a>
+					<a class="permalink" href="#Command.UsageTemplate">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) UsageTemplate() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+UsageTemplate 返回命令的使用模板
+</p>
+
+				
+				
+				
+			
+				
+				<h3 id="Command.UseLine">func (*Command) <a href="/src/github.com/hupf3/mycobra/command.go?s=7289:7323#L336">UseLine</a>
+					<a class="permalink" href="#Command.UseLine">&#xb6;</a>
+					
+					
+				</h3>
+				<pre>func (c *<a href="#Command">Command</a>) UseLine() <a href="/pkg/builtin/#string">string</a></pre>
+				<p>
+UseLine 输出该命令的完整描述
+</p>
+
+				
+				
+				
+			
+		
+	
+
+	
+
+
+
+
+
+
+
+<div id="footer">
+Build version go1.15.2.<br>
+Except as <a href="https://developers.google.com/site-policies#restrictions">noted</a>,
+the content of this page is licensed under the
+Creative Commons Attribution 3.0 License,
+and code is licensed under a <a href="/LICENSE">BSD license</a>.<br>
+<a href="/doc/tos.html">Terms of Service</a> |
+<a href="http://www.google.com/intl/en/policies/privacy/">Privacy Policy</a>
+</div>
+
+</div><!-- .container -->
+</div><!-- #page -->
+</body>
+</html>
